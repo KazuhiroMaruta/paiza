@@ -1,0 +1,23 @@
+// 整数型の変数を 2 つ宣言して整数 X, Y を格納したのち、2 つの変数の中身を入れ替えた後の 2 つの変数の値を出力してください。
+import java.util.*;
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+        // 配列に要素を格納
+        Scanner scanner = new Scanner(System.in);
+        int[] A = new int[2];
+        for (int i = 0; i < 2; i++) {
+            A[i] = scanner.nextInt();
+        }
+        
+        // 配列の中身を入れ替える
+        int tmp = A[0];
+        A[0] = A[1];
+        A[1] = tmp;
+        
+         // 出力
+        System.out.print(A[0] + " " + A[1]);
+    }
+}
