@@ -1,0 +1,29 @@
+import java.util.*;
+
+/* 配列 A とその要素数 N と削除する要素の番号 n が与えられるので、
+　  A から A_n を削除し、A を要素数 N - 1 の配列とした後の A の各要素を出力してください。 */
+
+public class Main {
+    public static void main(String[] args) {
+        
+        // 配列Aに値を格納
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        ArrayList<Integer> A = new ArrayList<Integer>();
+        for (int i = 0; i < N; i++) {
+            A.add(scanner.nextInt());
+        }
+        
+        // 削除する位置 n を取得
+        int n = scanner.nextInt();
+        
+        // 配列から値を削除
+        A.remove(n - 1);
+        
+        // 出力
+        for (int x: A){
+            System.out.println(x);
+        }
+        
+    }
+}
