@@ -1,0 +1,24 @@
+import java.util.*;
+
+// 配列 A の要素数 N と配列 A の各要素 A_1, A_2, ..., A_N が与えられるので、
+// A の要素の全てのペアについてのかけ算の結果を出力してください。
+
+public class Main {
+    public static void main(String[] args) {
+        
+        // 配列Aに値を格納
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int[] A = new int[N];
+        for (int i = 0; i < N; i++) {
+            A[i] = scanner.nextInt();
+        }
+        
+        // Aの値を掛け算し出力
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.println(A[i] * A[j]);
+            }
+        }
+    }
+}
