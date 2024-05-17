@@ -1,0 +1,39 @@
+import java.util.*;
+
+/*配列 A の要素数 N と新たに作成する配列のサイズ n , 配列 A の各要素 A_1 ... A_N が与えられるので、
+　配列 A の先頭から n 要素を順に保持する配列を作成してください。
+　新たに作成する配列の要素数が A の要素数よりも大きい時は、
+　サイズが合うように 0 を A の要素の末尾に追加してください。*/
+
+public class Main {
+    public static void main(String[] args) {
+        
+        // 配列A、N、nを取得
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int n = scanner.nextInt();
+        int[] A = new int[n];
+        
+        // 配列Aに値を格納
+        if(N > n){
+            for (int i = 0; i < n; i++) {
+                A[i] = scanner.nextInt();
+            }
+        }else{
+            for (int i = 0; i < N; i++) {
+                A[i] = scanner.nextInt();
+            }
+        }
+
+        
+        // 配列に0を追加
+        for (int i = N; i < n; i++) {
+            A[i] = 0;
+        }
+        
+        // 出力
+        for (int x: A){
+            System.out.println(x);
+        }
+    }
+}
