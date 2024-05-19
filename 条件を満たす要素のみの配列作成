@@ -1,0 +1,32 @@
+import java.util.*;
+
+/* 配列 A の要素数 N と整数 K , 配列 A の各要素 A_1 ... A_N が与えられるので、
+   K 以上であるような配列 A の要素のみを要素として持つ配列 B を作成しその要素を出力してください。 
+   B の要素の順は A と同じにしてください */
+
+public class Main {
+    public static void main(String[] args) {
+        
+        // 配列Aに値を格納
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int K = scanner.nextInt();
+        ArrayList<Integer> A = new ArrayList<Integer>();
+        for (int i = 0; i < N; i++) {
+            A.add(scanner.nextInt());
+        }
+        
+        // 配列Bを作成
+        ArrayList<Integer> B = new ArrayList<Integer>();
+        for (int x : A) {
+            if ( x >= K) {
+                B.add(x);
+            }
+        }
+        
+        // 出力
+        for (int x: B){
+            System.out.println(x);
+        }
+    }
+}
