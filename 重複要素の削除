@@ -1,0 +1,32 @@
+import java.util.*;
+
+/* 配列 A の要素数 N と配列 A の各要素 A_1, A_2, ..., A_N が与えられるので、
+   同じ値の要素が 2 つ以上含まれないように A を加工した新たな配列 B を作成してください。
+   ただし、 A に同じ値の要素が 2 つ以上あった場合、それらのうち先頭の要素を B に採用するものとします。*/
+
+public class Main {
+    public static void main(String[] args) {
+        
+        // 配列Aに値を格納
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        ArrayList<Integer> A = new ArrayList<Integer>();
+        for (int i = 0; i < N; i++) {
+            A.add(scanner.nextInt());
+        }
+        
+        // 重複した値を削除
+        ArrayList<Integer> B = new ArrayList<Integer>();
+        for (int x : A) {
+            if (B.contains(x)) {
+                continue;
+            }
+            B.add(x);
+        }
+        
+        // 出力
+        for (int x: B){
+            System.out.println(x);
+        }
+    }
+}
