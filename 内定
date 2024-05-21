@@ -1,0 +1,39 @@
+import java.util.*;
+
+/*人事のあなたは、N 人の中から採用者を決定します。N 人のテストの点数はそれぞれ A_i (1 ≦ i ≦ N)です。
+  テストの点数が K 点以上の人全員を採用したいのですが、得点の高い方から M 人に辞退されてしまいました。
+  あなたの採用することのできる最大の人数を答えてください。
+  採用できる人数が 0 人の場合もあることに気をつけてください。*/
+
+public class Main {
+    public static void main(String[] args) {
+        
+        // N、K、Mの数を取得
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int k = scanner.nextInt();
+        int m = scanner.nextInt();
+        
+        // 受験者の得点を取得
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+             a[i] = scanner.nextInt();
+        }
+        
+        // K 点以上の人をカウント
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+             if(a[i] >= k){
+                 count++;
+             }
+        }
+        
+        // 合格者を出力
+        int goukaku = count - m;
+        if(goukaku > 0){
+            System.out.println(goukaku);
+        }else{
+            System.out.println(0);
+        }
+    }
+}
